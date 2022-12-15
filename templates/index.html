@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <link rel="stylesheet" href={% static 'style.css' %}>
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+
+</head> 
+<body>
+ 
+
+    <center >
+        <div style="top:0;;background-color: rgb(36, 24, 24); box-shadow: 0 0 0 100vmax rgb(36, 24, 24);clip-path: inset(0 -100vmax);">
+            <div style="color:white; padding: 14px;">
+                SS Ploting 
+            </div>
+        </div>
+    </center>
+<div id="file_form">
+    <form  enctype='multipart/form-data' method="POST" action="upload_file" >
+        {% csrf_token %}
+        <div class="upload-files-container" >
+            <div class="drag-file-area">
+                <span class="material-icons-outlined upload-icon"> file_upload </span>
+                <h3 class="dynamic-message"> Drag & drop any file here </h3>
+                <label class="label"> or <span class="browse-files">
+                    <input type="file" class="default-file-input" name="features"/>
+                    <br>
+                    <span class="browse-files-text">browse file</span>
+                    <span>from device</span> </span> 
+                </label>
+            </div>
+            <span class="cannot-upload-message"> <span class="material-icons-outlined">error</span> Please select a file first <span class="material-icons-outlined cancel-alert-button">cancel</span> </span>
+            <div class="file-block">
+                <div class="file-info"> <span class="material-icons-outlined file-icon">description</span> <span class="file-name"> </span> | <span class="file-size">  </span> </div>
+                <span class="material-icons remove-file-icon">delete</span>
+                <div class="progress-bar"> </div>
+            </div>
+            <button type="submit"  class="upload-button"> Upload </button>
+        </div>
+    </form>
+</div>
+<br><br>
+<script>
+
+</script>
+<script src={% static "index.js" %}></script>
+</body>
+</html>
